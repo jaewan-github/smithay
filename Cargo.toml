@@ -72,7 +72,7 @@ smallvec = "1.11"
 pixman = { version = "0.2.1", features = ["drm-fourcc", "sync"], optional = true }
 aliasable = { version = "0.1.3", optional = true }
 portable-atomic = { version = "1", features = ["float"] }
-sha2 = "0.10.9"
+sha2 = { version = "0.10.9", optional = true }
 tracy-client = { version = "0.18.4", default-features = false, optional = true }
 reis = { version = "0.7.0", features = ["calloop"] }
 glam = { version = "0.33.2", default-features = false, features = ["std"] }
@@ -116,6 +116,7 @@ wayland_frontend = ["wayland-server", "wayland-protocols", "wayland-protocols-wl
 x11rb_event_source = ["x11rb"]
 xwayland = ["encoding_rs", "wayland_frontend", "x11rb/composite", "x11rb/xfixes", "x11rb/randr", "x11rb_event_source", "scopeguard"]
 test_all_features = ["default", "use_system_lib", "renderer_glow", "renderer_test"]
+use_sha = ["dep:sha2"]
 
 [[example]]
 name = "minimal"
